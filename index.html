@@ -22,10 +22,9 @@
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <link href="css/style.css" rel="stylesheet">
 
-    <!-- ESTILOS EXTRA PARA EL BOTÓN DE WHATSAPP -->
+    <!-- ESTILOS EXTRA WHATSAPP -->
     <style>
         .btn-whatsapp {
             position: fixed;
@@ -46,12 +45,21 @@
             text-decoration: none;
             transition: all 0.3s ease;
         }
-
         .btn-whatsapp:hover {
             background-color: #128C7E;
             transform: scale(1.1);
         }
-        
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 500px;
+        }
+        @media (max-width: 991.98px) {
+            .video-container video {
+                min-height: 300px;
+            }
+        }
         @media (max-width: 576px) {
             .btn-whatsapp {
                 width: 50px;
@@ -66,7 +74,7 @@
 
 <body>
     <div class="container-xxl bg-white p-0">
-        <!-- Spinner Start (Sin la clase 'show' para evitar bloqueo) -->
+        <!-- Spinner Start -->
         <div id="spinner" class="bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Cargando...</span>
@@ -108,6 +116,8 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Service Start -->
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="row g-4">
@@ -116,7 +126,7 @@
                             <div class="p-4">
                                 <i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
                                 <h5>Chefs Expertos</h5>
-                                <p>Nuestra cocina está en manos de expertos en el sabor caribeño.</p>
+                                <p>Sabor auténtico caribeño.</p>
                             </div>
                         </div>
                     </div>
@@ -124,8 +134,8 @@
                         <div class="service-item rounded pt-3">
                             <div class="p-4">
                                 <i class="fa fa-3x fa-utensils text-primary mb-4"></i>
-                                <h5>Comida de Calidad</h5>
-                                <p>Solo usamos ingredientes frescos y de la mejor calidad para nuestros patacones.</p>
+                                <h5>Calidad Premium</h5>
+                                <p>Ingredientes frescos.</p>
                             </div>
                         </div>
                     </div>
@@ -134,7 +144,7 @@
                             <div class="p-4">
                                 <i class="fa fa-3x fa-cart-plus text-primary mb-4"></i>
                                 <h5>Pedidos Online</h5>
-                                <p>Pide fácilmente a través de nuestro sitio web o WhatsApp y recoge en tienda.</p>
+                                <p>Pide fácil por WhatsApp.</p>
                             </div>
                         </div>
                     </div>
@@ -142,217 +152,59 @@
                         <div class="service-item rounded pt-3">
                             <div class="p-4">
                                 <i class="fa fa-3x fa-headset text-primary mb-4"></i>
-                                <h5>Servicio al Cliente</h5>
-                                <p>Estamos aquí para asegurar que tengas la mejor experiencia con nosotros.</p>
+                                <h5>Atención 24/7</h5>
+                                <p>Siempre a tu servicio.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- About Start -->
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6">
                         <div class="row g-3">
                             <div class="col-6 text-start">
-                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="img/about-1.jpg">
+                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="img/about-1.jpg" alt="Local">
                             </div>
                             <div class="col-6 text-start">
-                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="img/about-2.jpg" style="margin-top: 25%;">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="img/about-2.jpg" style="margin-top: 25%;" alt="Ambiente">
                             </div>
                             <div class="col-6 text-end">
-                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.5s" src="img/about-3.jpg">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.5s" src="img/about-3.jpg" alt="Platos">
                             </div>
                             <div class="col-6 text-end">
-                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.7s" src="img/about-4.jpg">
+                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.7s" src="img/about-4.jpg" alt="Preparación">
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <h5 class="section-title ff-secondary text-start text-primary fw-normal">Sobre Nosotros</h5>
                         <h1 class="mb-4">Bienvenido a <i class="fa fa-utensils text-primary me-2"></i>Patacones Milu</h1>
-                        <p class="mb-4">Patacones Milu nace del corazón de Viviana Martínez, fusionando el empuje paisa con el tesoro culinario de su padre chocoano. Nuestro nombre, inspirado en Miguel y Luciano (hijo y sobrino), es el motor que impulsa nuestra misión: rescatar y servir el auténtico sazón ancestral del Pacífico, transformando una receta familiar en una experiencia inolvidable.</p>
-                        <p class="mb-4">Nuestra visión es llevar esa alegría y riqueza cultural a cada mesa, convirtiéndonos en el referente de sabor y tradición donde cada patacón cuenta una historia de amor y familia..</p>
-                        <div class="row g-4 mb-4">
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">5</h1>
-                                    <div class="ps-4">
-                                        <p class="mb-0">Años de</p>
-                                        <h6 class="text-uppercase mb-0">Experiencia</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">10</h1>
-                                    <div class="ps-4">
-                                        <p class="mb-0">Miembros</p>
-                                        <h6 class="text-uppercase mb-0">Del Equipo</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <p class="mb-4">Patacones Milu nace del corazón de Viviana Martínez, fusionando el empuje paisa con el tesoro culinario de su padre chocoano. Inspirado en Miguel y Luciano, servimos auténtico sazón del Pacífico.</p>
                         <a class="btn btn-primary py-3 px-5 mt-2" href="about.html">Leer Más</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Nuestro Menú</h5>
-                    <h1 class="mb-5">Los Más Populares</h1>
-                </div>
-                <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
-                        <li class="nav-item">
-                            <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab-1">
-                                <i class="fa fa-hamburger fa-2x text-primary"></i>
-                                <div class="ps-3">
-                                    <small class="text-body">Populares</small>
-                                    <h6 class="mt-n1 mb-0">Patacones</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab-2">
-                                <i class="fa fa-utensils fa-2x text-primary"></i>
-                                <div class="ps-3">
-                                    <small class="text-body">Especiales</small>
-                                    <h6 class="mt-n1 mb-0">De la Casa</h6>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab-3">
-                                <i class="fa fa-coffee fa-2x text-primary"></i>
-                                <div class="ps-3">
-                                    <small class="text-body">Adicional</D>
-                                    <h6 class="mt-n1 mb-0">Bebidas</h6>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="tab-1" class="tab-pane fade show p-0 active">
-                            <div class="row g-4">
-                                <div class="col-lg-6">
-                                    <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
-                                        <div class="w-100 d-flex flex-column text-start ps-4">
-                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Patacón con Todo</span>
-                                                <span class="text-primary">$18.000</span>
-                                            </h5>
-                                            <small class="fst-italic">Carne, pollo, chicharrón, queso costeño, hogao y salsas.</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-2.jpg" alt="" style="width: 80px;">
-                                        <div class="w-100 d-flex flex-column text-start ps-4">
-                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Patacón de Pollo</span>
-                                                <span class="text-primary">$14.000</span>
-                                            </h5>
-                                            <small class="fst-italic">Pollo desmechado bañado en salsa de la casa y queso gratinado.</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-3.jpg" alt="" style="width: 80px;">
-                                        <div class="w-100 d-flex flex-column text-start ps-4">
-                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Patacón de Carne</span>
-                                                <span class="text-primary">$15.000</span>
-                                            </h5>
-                                            <small class="fst-italic">Carne desmechada en su jugo, maíz tierno y queso fundido.</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-4.jpg" alt="" style="width: 80px;">
-                                        <div class="w-100 d-flex flex-column text-start ps-4">
-                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Patacón Caribeño</span>
-                                                <span class="text-primary">$16.000</span>
-                                            </h5>
-                                            <small class="fst-italic">Queso costeño rallado, suero, carne molida y platanito maduro.</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                        </div>
-                        <div id="tab-2" class="tab-pane fade show p-0">
-                            <div class="row g-4">
-                                <div class="col-lg-6">
-                                    <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-5.jpg" alt="" style="width: 80px;">
-                                        <div class="w-100 d-flex flex-column text-start ps-4">
-                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Patacón Milu (Especial)</span>
-                                                <span class="text-primary">$22.000</span>
-                                            </h5>
-                                            <small class="fst-italic">¡Doble patacón, todas las carnes, doble queso y aguacate!</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="tab-3" class="tab-pane fade show p-0">
-                            <div class="row g-4">
-                                <div class="col-lg-6">
-                                    <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-7.jpg" alt="" style="width: 80px;">
-                                        <div class="w-100 d-flex flex-column text-start ps-4">
-                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Jugo de Corozo</span>
-                                                <span class="text-primary">$7.000</span>
-                                            </h5>
-                                            <small class="fst-italic">Auténtico jugo caribeño. Pídelo en agua o en leche.</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-8.jpg" alt="" style="width: 80px;">
-                                        <div class="w-100 d-flex flex-column text-start ps-4">
-                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>Limonada de Coco</span>
-                                                <span class="text-primary">$8.000</span>
-                                            </h5>
-                                            <small class="fst-italic">La bebida perfecta para acompañar tu patacón.</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         
-        <!-- Pedidos Start -->
+        <!-- Pedidos Start (VIDEO LOCAL MANUAL) -->
         <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
             <div class="row g-0">
-                <div class="col-md-6">
-                    <div class="video">
-                        <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/watch?v=VCb90Trq4s4" data-bs-target="#videoModal">
-                            <span></span>
-                        </button>
-                    </div>
+                <div class="col-md-6 video-container">
+                    <!-- VIDEO LOCAL: Se quitó 'autoplay' y 'muted' para reproducción manual. -->
+                    <video controls loop playsinline style="width: 100%; height: 100%; object-fit: cover; min-height: 500px;">
+                        <source src="img/video.mp4" type="video/mp4">
+                        Tu navegador no soporta videos HTML5.
+                    </video>
                 </div>
                 <div class="col-md-6 bg-dark d-flex align-items-center">
                     <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
                         <h5 class="section-title ff-secondary text-start text-primary fw-normal">Domicilios</h5>
                         <h1 class="text-white mb-4">¡Pide Ahora!</h1>
-                        
-                        <!-- Formulario con funcionalidad AJAX para NO redireccionar -->
                         <form id="pedido-form" action="https://formspree.io/f/xldaeqbo" method="POST">
                             <div class="row g-3">
                                 <div class="col-md-6">
@@ -384,32 +236,14 @@
                                 </div>
                             </div>
                         </form>
-                        <!-- Espacio para mensaje de confirmación -->
                         <div id="form-status" class="mt-3"></div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content rounded-0">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Video de Youtube</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="ratio ratio-16x9">
-                            <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                                allow="autoplay"></iframe>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Pedidos End -->
 
+        <!-- Team Start -->
         <div class="container-xxl pt-5 pb-3">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -417,119 +251,42 @@
                     <h1 class="mb-5">Nuestros Expertos del Sabor</h1>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <!-- 1. Viviana Martínez - Fundadora -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item text-center rounded overflow-hidden">
                             <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-1.jpg" alt="">
+                                <img class="img-fluid" src="img/team-1.jpg" alt="Viviana Martínez">
                             </div>
-                            <h5 class="mb-0">Nombre Apellido</h5>
-                            <small>Chef Principal</small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
+                            <h5 class="mb-0">Viviana Martínez</h5>
+                            <small>Fundadora</small>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <!-- 2. Vanessa Perea - Cocinera jefe -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="team-item text-center rounded overflow-hidden">
                             <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-2.jpg" alt="">
+                                <img class="img-fluid" src="img/team-2.jpg" alt="Vanessa Perea">
                             </div>
-                            <h5 class="mb-0">Nombre Apellido</h5>
-                            <small>Chef</small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
+                            <h5 class="mb-0">Vanessa Perea</h5>
+                            <small>Cocinera jefe</small>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <!-- 3. Andrés Ortiz - Atención al Cliente -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-item text-center rounded overflow-hidden">
                             <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-3.jpg" alt="">
+                                <img class="img-fluid" src="img/team-3.jpg" alt="Andrés Ortiz">
                             </div>
-                            <h5 class="mb-0">Nombre Apellido</h5>
-                            <small>Administrador</small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-4.jpg" alt="">
-                            </div>
-                            <h5 class="mb-0">Nombre Apellido</h5>
+                            <h5 class="mb-0">Andrés Ortiz</h5>
                             <small>Atención al Cliente</small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="container">
-                <div class="text-center">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Testimonios</h5>
-                    <h1 class="mb-5">¡Nuestros Clientes Opinan!</h1>
-                </div>
-                <div class="owl-carousel testimonial-carousel">
-                    <div class="testimonial-item bg-transparent border rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>¡Los mejores patacones que he probado en Medellín! El sabor es auténtico caribeño y los ingredientes se sienten súper frescos. Totalmente recomendados.</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" style="width: 50px; height: 50px;">
-                            <div class="ps-3">
-                                <h5 class="mb-1">Cliente Satisfecho</h5>
-                                <small>Cliente Frecuente</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-transparent border rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>El 'Patacón con Todo' es una locura, ¡realmente es con todo! La atención es excelente y el lugar es muy agradable. Volveré pronto.</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg" style="width: 50px; height: 50px;">
-                            <div class="ps-3">
-                                <h5 class="mb-1">Cliente Satisfecho</h5>
-                                <small>Visitante</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-transparent border rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>Me encantó la limonada de coco. El patacón de pollo estaba delicioso y en su punto. Un pedacito del caribe en plena ciudad.</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg" style="width: 50px; height: 50px;">
-                            <div class="ps-3">
-                                <h5 class="mb-1">Cliente Satisfecho</h5>
-                                <small>Cliente Frecuente</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-transparent border rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>Excelente servicio. Hice mi pedido por WhatsApp y estaba listo justo a tiempo cuando pasé a recogerlo. ¡Muy eficientes!</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-4.jpg" style="width: 50px; height: 50px;">
-                            <div class="ps-3">
-                                <h5 class="mb-1">Cliente Satisfecho</h5>
-                                <small>Pedido Online</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Team End -->
+
+        <!-- Footer -->
         <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5">
                 <div class="row g-5">
@@ -537,21 +294,12 @@
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Compañía</h4>
                         <a class="btn btn-link" href="about.html">Quiénes Somos</a>
                         <a class="btn btn-link" href="contact.html">Contáctanos</a>
-                        <a class="btn btn-link" href="#pedidos">Pedidos</a>
-                        <a class="btn btn-link" href="">Política de Privacidad</a>
-                        <a class="btn btn-link" href="">Términos y Condiciones</a>
+                        <a class="btn btn-link" href="menu.html">Menú</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contacto</h4>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Cra 73# 53-29, Medellín, Colombia</p>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Cra 73# 53-29, Medellín</p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+57 324 250 5753</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>pedidos@pataconesmilu.com</p>
-                        <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Horarios</h4>
@@ -560,14 +308,6 @@
                         <h5 class="text-light fw-normal">Domingo</h5>
                         <p>12PM - 8PM</p>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Boletín</h4>
-                        <p>Suscríbete a nuestro boletín para recibir promociones.</p>
-                        <div class="position-relative mx-auto" style="max-width: 400px;">
-                            <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Tu correo">
-                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Suscribir</button>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="container">
@@ -575,32 +315,17 @@
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                             &copy; <a class="border-bottom" href="#">Patacones Milu</a>, Todos los Derechos Reservados. 
-                            
-                            Diseñado por <a class="border-bottom" href="https://htmlcodex.com">@josealejot</a><br><br>
-                            Distribuido por <a class="border-bottom" href="https://themewagon.com" target="_blank">@ProfeLuisVirtual</a>
-                        </div>
-                        <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
-                                <a href="index.html">Inicio</a>
-                                <a href="">Cookies</a>
-                                <a href="">Ayuda</a>
-                                <a href="">Preguntas Frecuentes</a>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Footer End -->
 
-
-        <!-- Botón Flotante de WhatsApp (CORREGIDO PARA ANDROID: sin target blank y con api.whatsapp) -->
+        <!-- WhatsApp -->
         <a href="https://api.whatsapp.com/send?phone=573242505753&text=Hola%20Patacones%20Milu,%20deseo%20hacer%20un%20pedido" class="btn-whatsapp">
             <i class="fab fa-whatsapp"></i>
         </a>
 
-
-        <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
@@ -615,11 +340,9 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
-    <!-- Script para manejar el envío sin recargar -->
+    <!-- Script AJAX -->
     <script>
         var form = document.getElementById("pedido-form");
         var status = document.getElementById("form-status");
@@ -627,15 +350,11 @@
         async function handleSubmit(event) {
             event.preventDefault();
             var data = new FormData(event.target);
-            
             status.innerHTML = '<div class="alert alert-info text-white" role="alert">Enviando tu pedido...</div>';
-
             fetch(event.target.action, {
                 method: form.method,
                 body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                headers: { 'Accept': 'application/json' }
             }).then(response => {
                 if (response.ok) {
                     status.innerHTML = '<div class="alert alert-success" role="alert">¡Gracias por tu pedido! Te contactaremos pronto.</div>';
@@ -656,5 +375,4 @@
         form.addEventListener("submit", handleSubmit)
     </script>
 </body>
-
 </html>
