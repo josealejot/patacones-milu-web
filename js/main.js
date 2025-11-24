@@ -1,7 +1,8 @@
 (function ($) {
     "use strict";
 
-    // Spinner
+    // 1. Spinner (Cargando...)
+    // Desaparece suavemente cuando la página termina de cargar
     var spinner = function () {
         setTimeout(function () {
             if ($('#spinner').length > 0) {
@@ -10,13 +11,12 @@
         }, 1);
     };
     spinner();
-    
-    
-    // Initiate the wowjs
+
+    // 2. WowJS (Animaciones al hacer scroll)
     new WOW().init();
 
-
-    // Sticky Navbar
+    // 3. Sticky Navbar (Barra de navegación pegajosa)
+    // Se oscurece y se queda fija al bajar más de 45px
     $(window).scroll(function () {
         if ($(this).scrollTop() > 45) {
             $('.navbar').addClass('sticky-top shadow-sm');
@@ -24,14 +24,13 @@
             $('.navbar').removeClass('sticky-top shadow-sm');
         }
     });
-    
-    
-    // Dropdown on mouse hover
+
+    // 4. Menú desplegable (Dropdown) al pasar el mouse
     const $dropdown = $(".dropdown");
     const $dropdownToggle = $(".dropdown-toggle");
     const $dropdownMenu = $(".dropdown-menu");
     const showClass = "show";
-    
+
     $(window).on("load resize", function() {
         if (this.matchMedia("(min-width: 992px)").matches) {
             $dropdown.hover(
@@ -52,9 +51,8 @@
             $dropdown.off("mouseenter mouseleave");
         }
     });
-    
-    
-    // Back to top button
+
+    // 5. Botón "Volver Arriba"
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
             $('.back-to-top').fadeIn('slow');
@@ -67,33 +65,13 @@
         return false;
     });
 
-
-    // Facts counter
+    // 6. Configuración de contadores (Facts)
     $('[data-toggle="counter-up"]').counterUp({
         delay: 10,
         time: 2000
     });
 
-
-    // Modal Video
-    $(document).ready(function () {
-        var $videoSrc;
-        $('.btn-play').click(function () {
-            $videoSrc = $(this).data("src");
-        });
-        console.log($videoSrc);
-
-        $('#videoModal').on('shown.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
-        })
-
-        $('#videoModal').on('hide.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc);
-        })
-    });
-
-
-    // Testimonials carousel
+    // 7. Carrusel de Testimonios (Si decides usarlo en el futuro)
     $(".testimonial-carousel").owlCarousel({
         autoplay: true,
         smartSpeed: 1000,
@@ -114,6 +92,31 @@
             }
         }
     });
-    
+
 })(jQuery);
 
+/* ===============================================================
+   8. LÓGICA DE ZOOM DE IMÁGENES (El Modal del Menú)
+   Esta función debe estar fuera del bloque jQuery para ser global
+   ===============================================================
+*/
+function showImage(imgElement) {
+    // Verifica si el modal existe en la página (solo en menu.html)
+    var modalElement = document.getElementById('imageModal');
+    
+    if (modalElement) {
+        // 1. Captura la ruta de la imagen pequeña y su descripción
+        var src = imgElement.src;
+        var alt = imgElement.alt;
+        
+        // 2. Asigna esos datos a la imagen grande dentro del modal
+        document.getElementById('modalImage').src = src;
+        document.getElementById('modalTitle').innerText = alt;
+        
+        // 3. Usa Bootstrap para mostrar el modal
+        var myModal = new bootstrap.Modal(modalElement);
+        myModal.show();
+    } else {
+        console.log("El modal de imagen no está presente en esta página.");
+    }
+}
