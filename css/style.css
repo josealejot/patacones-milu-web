@@ -2,8 +2,18 @@
 :root {
     --primary: #FDBF11;   /* Naranja/Amarillo del logo */
     --light: #F9F9F9;     /* Un blanco-crema suave */
-    --dark: #2E2E2E;      /* Gris oscuro del texto del logo */
-    --secondary: #8DBF41; /* Verde de la hoja */
+    --dark: #135f1f;      /* NUEVO VERDE HOJA OSCURO para fondos y navbar */
+    --secondary: #8DBF41; /* Verde de la hoja (para uso futuro) */
+}
+
+/* 🟢 CAMBIO PRINCIPAL: Fondo de la página entero al verde oscuro */
+body {
+    background-color: var(--dark);
+}
+
+/* 🟢 CAMBIO CLAVE: Sobrescribir la clase de Bootstrap .bg-dark para que use TU verde oscuro */
+.bg-dark {
+    background-color: var(--dark) !important;
 }
 
 .ff-secondary {
@@ -35,7 +45,7 @@
     width: 60px;
     height: 60px;
     background-color: #25D366;
-    color: #ffffff !important;
+    color: #ffffff !important; 
     border-radius: 50%;
     text-align: center;
     font-size: 35px;
@@ -53,6 +63,16 @@
     transform: scale(1.1);
 }
 
+@media (max-width: 576px) {
+    .btn-whatsapp {
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+        bottom: 20px;
+        left: 20px;
+    }
+}
+
 
 /*** Spinner ***/
 #spinner {
@@ -60,6 +80,8 @@
     visibility: hidden;
     transition: opacity .5s ease-out, visibility 0s linear .5s;
     z-index: 99999;
+    /* 🟢 Fondo del spinner al verde oscuro (se beneficia del cambio en .bg-dark) */
+    background: var(--dark); 
 }
 
 #spinner.show {
@@ -114,7 +136,6 @@
     position: relative;
     margin-left: 25px;
     padding: 35px 0;
-    font-size: 15px;
     color: var(--light) !important;
     text-transform: uppercase;
     font-weight: 500;
@@ -168,11 +189,13 @@
         top: 0;
         left: 0;
         z-index: 999;
+        /* El fondo ahora será verde por la regla .bg-dark, pero se mantiene transparent si es la intención en escritorio */
         background: transparent !important;
     }
     
     .sticky-top.navbar-dark {
         position: fixed;
+        /* 🟢 Fondo verde oscuro para la navbar fija */
         background: var(--dark) !important;
     }
 }
@@ -180,7 +203,8 @@
 
 /*** Hero Header ***/
 .hero-header {
-    background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(../img/bg-hero.jpg);
+    /* 🟢 CAMBIO: Ambos colores del gradiente son el RGBa de --dark (#135f1f) */
+    background: linear-gradient(rgba(19, 95, 31, 0.9), rgba(19, 95, 31, 0.9)), url(../img/bg-hero.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -229,6 +253,8 @@
 .service-item {
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
     transition: .5s;
+    /* 🟢 Fondo de las cajas de servicio a un color claro para el contraste */
+    background: var(--light); 
 }
 
 .service-item:hover {
@@ -255,11 +281,6 @@
     position: relative;
     height: 100%;
     min-height: 500px;
-    /* Corrección para usar tu imagen de fondo oscura */
-    background: linear-gradient(rgba(15, 23, 43, .1), rgba(15, 23, 43, .1)), url(../img/bg-hero.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .video .btn-play {
@@ -374,6 +395,8 @@
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
     height: calc(100% - 38px);
     transition: .5s;
+    /* 🟢 Fondo de las cajas del equipo a un color claro para el contraste */
+    background: var(--light);
 }
 
 .team-item img {
@@ -392,28 +415,24 @@
     border-radius: 38px 38px 0 0;
 }
 
-/* --- CORRECCIÓN DE LEGIBILIDAD DE NOMBRES --- */
+/* CORRECCIÓN DE LEGIBILIDAD (Nombres y cargos) */
 .team-item h5 {
-    color: #0F172B !important; /* Negro fuerte para el nombre */
-    font-weight: 800 !important; /* Letra extra gruesa */
-    font-size: 1.3rem; /* Un poco más grande */
-    margin-top: 15px;
+    color: var(--dark) !important; /* Usar el color oscuro */
+    font-weight: 800 !important; /* Letra más gruesa */
 }
 
 .team-item small {
-    color: #555555 !important; /* Gris oscuro para el cargo */
+    color: #666565 !important; /* Gris estándar para el cargo */
     font-weight: 600;
-    font-size: 1rem;
-    display: block;
-    margin-bottom: 10px;
 }
-/* ------------------------------------------- */
 
 
 /*** Testimonial ***/
 .testimonial-carousel .owl-item .testimonial-item,
 .testimonial-carousel .owl-item.center .testimonial-item * {
     transition: .5s;
+    /* 🟢 Fondo de los ítems de testimonial a un color claro por defecto */
+    background: var(--light); 
 }
 
 .testimonial-carousel .owl-item.center .testimonial-item {
@@ -450,6 +469,11 @@
 
 
 /*** Footer ***/
+/* 🟢 CAMBIO: Fondo del footer al verde oscuro */
+.footer {
+    background: var(--dark);
+}
+
 .footer .btn.btn-social {
     margin-right: 5px;
     width: 35px;
@@ -473,8 +497,6 @@
     padding: 0;
     text-align: left;
     color: #FFFFFF;
-    font-size: 15px;
-    font-weight: normal;
     text-transform: capitalize;
     transition: .3s;
 }
@@ -494,8 +516,8 @@
 
 .footer .copyright {
     padding: 25px 0;
-    font-size: 15px;
-    border-top: 1px solid rgba(256, 256, 256, .1);
+    /* 🟢 CAMBIO: Borde superior con RGBa de --dark */
+    border-top: 1px solid rgba(19, 95, 31, 0.9);
 }
 
 .footer .copyright a {
